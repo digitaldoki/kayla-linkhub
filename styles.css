@@ -1,0 +1,90 @@
+/* Kayla Link Hub — minimalist, touch-friendly, dark-mode first */
+:root{
+  --bg: #0b0b10;
+  --card: #13131a;
+  --text: #f8f8fc;
+  --muted: #b5b8c7;
+  --accent: #ff2e88;   /* hot pink */
+  --accent-2: #72ffd6; /* mint pop */
+  --ring: rgba(255,46,136,0.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #ffffff;
+    --card: #f5f7fb;
+    --text: #12131a;
+    --muted: #495266;
+  }
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 80% -20%, var(--accent-2) 0%, transparent 55%),
+              radial-gradient(1000px 600px at -10% 20%, var(--accent) 0%, transparent 60%),
+              var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:680px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.profile{
+  text-align:center;
+  margin: 6px 0 18px;
+}
+.avatar{
+  width:96px;height:96px;border-radius:50%;display:block;margin: 12px auto 8px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 6px var(--ring);
+}
+h1{margin:6px 0 4px;font-size:28px;letter-spacing:0.2px}
+.tagline{margin:0;color:var(--muted)}
+
+.links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin: 22px 0 12px;
+}
+.link{
+  display:block;
+  text-decoration:none;
+  padding:14px 18px;
+  border-radius:14px;
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--text);
+  font-weight:600;
+  text-align:center;
+  transition: transform .06s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.link:focus,.link:hover{ transform: translateY(-1px); border-color: var(--accent); box-shadow: 0 6px 24px -12px var(--ring);}
+
+.socials{
+  display:flex; gap:10px; justify-content:center; margin: 10px 0 8px;
+}
+.icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:9px; font-size:12px; font-weight:700;
+  text-decoration:none; color:var(--text);
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.08);
+}
+.icon:hover{ border-color: var(--accent)}
+
+.foot{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:18px; color:var(--muted);
+}
+.copy{
+  border:0; padding:10px 14px; border-radius:10px; font-weight:600;
+  background: var(--accent); color:white; cursor:pointer;
+}
+.copy:hover{ filter: brightness(1.1) }
