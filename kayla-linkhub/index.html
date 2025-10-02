@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kayla — Links</title>
+  <meta name="description" content="All my links in one place." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Kayla — Links" />
+  <meta property="og:description" content="All my links in one place." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Fallback in case styles.css fails to load */
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="profile">
+      <img class="avatar" src="avatar.png" alt="Kayla avatar" onerror="this.classList.add('hidden')" />
+      <h1>Kayla Alyak</h1>
+      <p class="tagline">Creator • Casino Pro • DigitalDoki</p>
+    </header>
+
+    <nav class="links">
+      <!-- Duplicate any of these blocks and edit the href + text later tonight -->
+      <a class="link" href="https://digitaldoki.com" target="_blank" rel="noopener">🌐 DigitalDoki</a>
+      <a class="link" href="https://instagram.com/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a class="link" href="mailto:hello@example.com">✉️ Email me</a>
+    </nav>
+
+    <section class="socials">
+      <!-- social icon row; replace # with your profiles -->
+      <a href="#" aria-label="Instagram" class="icon">IG</a>
+      <a href="#" aria-label="TikTok" class="icon">TT</a>
+      <a href="#" aria-label="YouTube" class="icon">YT</a>
+      <a href="#" aria-label="X/Twitter" class="icon">X</a>
+    </section>
+
+    <footer class="foot">
+      <button id="copy" class="copy">Copy page link</button>
+      <small>© <span id="year"></span> Kayla</small>
+    </footer>
+  </main>
+
+  <script>
+    // Set year + copy-to-clipboard
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('copy').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const btn = document.getElementById('copy');
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(()=>btn.textContent=old, 1200);
+      } catch(e) { alert('Could not copy link'); }
+    });
+  </script>
+</body>
+</html>
