@@ -1,65 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kayla — Links</title>
-  <meta name="description" content="All my links in one place." />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <meta property="og:title" content="Kayla — Links" />
-  <meta property="og:description" content="All my links in one place." />
-  <meta property="og:image" content="og-image.png" />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Fallback in case styles.css fails to load */
-    .hidden{display:none}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kayla — Links</title>
+<meta name="description" content="All my links in one place." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta property="og:title" content="Kayla — Links" />
+<meta property="og:description" content="All my links in one place." />
+<meta property="og:image" content="og-image.png" />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="container">
-    <header class="profile">
-      <img class="avatar" src="avatar.png" alt="Kayla avatar" onerror="this.classList.add('hidden')" />
-      <h1>Kayla Zayyad</h1>
-      <p class="tagline">Creator • Casino Pro • DigitalDokimion</p>
-    </header>
+<main class="container">
+<header class="profile">
+<img class="avatar" src="avatar.png" alt="Kayla avatar" onerror="this.classList.add('hidden')" />
+<h1>Kayla Zayyad</h1>
+<p class="tagline">Creator • Casino Pro • DigitalDokimion</p>
+</header>
 
-    <nav class="links">
-      <!-- Duplicate any of these blocks and edit the href + text later tonight -->
-      <a class="link" href="https://dokimion.tech" target="_blank" rel="noopener">🌐 DigitalDokimion (Under Construction)</a>
-      <a class="link" href="https://digitaldoki.com" target="_blank" rel="noopener">🦁 DigitalDoki</a>
-      <a class="link" href="https://instagram.com/" target="_blank" rel="noopener">📸 Dear Digital Diary </a>
-      <a class="link" href="https://www.facebook.com/kaylalovesiam" target="_blank" rel="noopener">Facebook Profile</a>
-      <a class="link" href="mailto:contact@kaylazayyad.com">✉️ Email me</a>
-    </nav>
 
-    <section class="socials">
-      <!-- social icon row; replace # with your profiles -->
-      <a href="https://www.facebook.com/kaylalovesiam" aria-label="X/Twitter" class="icon">X</a>
-      <a href="https://www.instagram.com/kaylalaalyak/?igsh=MTl0aTBtN3Ywcnkx&utm_source=qr#" aria-label="Instagram" class="icon">IG</a>
-      <a href="https://www.tiktok.com/@ahkeekskeekskeeks?_t=ZT-90Di0QAgXF1&_r=1" aria-label="TikTok" class="icon">TT</a>
-      <a href="https://www.youtube.com/@kaylaalyak9856" aria-label="YouTube" class="icon">YT</a>
-      
-    </section>
+<nav class="links">
+<a class="link" href="https://dokimion.tech" target="_blank" rel="noopener">🌐 DigitalDokimion (Under Construction)</a>
+<a class="link" href="https://digitaldoki.com" target="_blank" rel="noopener">🦁 DigitalDoki</a>
+<a class="link" href="https://instagram.com/" target="_blank" rel="noopener">📸 Dear Digital Diary</a>
+<a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener">▶️ YouTube</a>
+<a class="link" href="mailto:contact@kaylazayyad.com">✉️ Email me</a>
+<a class="link" href="landing.html">✨ Landing Page</a>
+<a class="link" href="blog.html">📝 Blog</a>
+<a class="link" href="about.html">👋 About / Digital Doki</a>
+</nav>
 
-    <footer class="foot">
-      <button id="copy" class="copy">Copy page link</button>
-      <small>© <span id="year"></span> Kayla</small>
-    </footer>
-  </main>
 
-  <script>
-    // Set year + copy-to-clipboard
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('copy').addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        const btn = document.getElementById('copy');
-        const old = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(()=>btn.textContent=old, 1200);
-      } catch(e) { alert('Could not copy link'); }
-    });
-  </script>
+<section class="socials">
+<a href="https://www.facebook.com/kaylalovesiam" aria-label="X/Twitter" class="icon">X</a>
+<a href="https://www.instagram.com/kaylalaalyak/?igsh=MTl0aTBtN3Ywcnkx&utm_source=qr#" aria-label="Instagram" class="icon">IG</a>
+<a href="https://www.tiktok.com/@ahkeekskeekskeeks?_t=ZT-90Di0QAgXF1&_r=1" aria-label="TikTok" class="icon">TT</a>
+<a href="https://www.youtube.com/@kaylaalyak9856" aria-label="YouTube" class="icon">YT</a>
+</section>
+
+
+<footer class="foot">
+<button id="copy" class="copy">Copy page link</button>
+<small>© <span id="year"></span> Kayla</small>
+</footer>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
