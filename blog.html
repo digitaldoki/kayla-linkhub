@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kayla — Blog</title>
+<meta name="description" content="Self‑hosted blog by Kayla." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+<header class="profile">
+<img class="avatar" src="avatar.png" alt="Kayla avatar" onerror="this.classList.add('hidden')" />
+<h1>Blog</h1>
+<p class="tagline">I own this. No algorithm leash.</p>
+</header>
 
+
+<section class="grid">
+<!-- Duplicate these .post-card blocks for new posts -->
+<article class="post-card">
+<a href="posts/hello-world.html">
+<img class="post-thumb" src="/posts/hello-thumb.jpg" alt="Hello World thumbnail" onerror="this.parentElement.parentElement.querySelector('.post-body').style.paddingTop='16px'"/>
+</a>
+<div class="post-body">
+<h3 class="post-title"><a href="posts/hello-world.html">Hello, World — Why I’m Self‑Hosting</a></h3>
+<div class="post-meta">Oct 2025 • 3 min read</div>
+<p class="post-excerpt">Quick intro, why I’m building Digital Doki, and what to expect: tiny, useful posts and real‑life receipts.</p>
+<div class="row">
+<span class="tag">Foundations</span>
+<span class="tag">Creator Notes</span>
+</div>
+</div>
+</article>
+
+
+<!-- Example placeholder card -->
+<article class="post-card">
+<a href="posts/_post-template.html">
+<img class="post-thumb" src="/posts/template-thumb.jpg" alt="Post template thumbnail" />
+</a>
+<div class="post-body">
+<h3 class="post-title"><a href="posts/_post-template.html">Duplicate Me: Post Template</a></h3>
+<div class="post-meta">Template • ~4–6 min read</div>
+<p class="post-excerpt">A ready‑to‑copy single‑post page with rounded images, callouts, and clean typography.</p>
+<div class="row">
+<span class="tag">Template</span>
+</div>
+</div>
+</article>
+</section>
+
+
+<div class="space"></div>
+<footer class="foot">
+<a class="btn" href="index.html">← Back to Links</a>
+<small>© <span id="year"></span> Kayla</small>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
