@@ -1,90 +1,71 @@
-/* Kayla Link Hub — minimalist, touch-friendly, dark-mode first */
+/* Theme: Kayla — neon-soft cards, rounded edges, clean type */
 :root{
-  --bg: #0b0b10;
-  --card: #13131a;
-  --text: #f8f8fc;
-  --muted: #b5b8c7;
-  --accent: #ff2e88;   /* hot pink */
-  --accent-2: #72ffd6; /* mint pop */
-  --ring: rgba(255,46,136,0.35);
+--bg: #0b0b12; /* deep midnight */
+--card: #151626; /* soft indigo */
+--ink: #f7f7fb; /* near-white */
+--muted: #b9b9ce; /* cool gray */
+--brand: #ff3ea5; /* hot pink */
+--brand-2: #6ee7ff; /* cyber blue */
+--ring: 32, 34, 64; /* for focus shadow */
+--radius: 18px;
+--shadow: 0 10px 25px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.45);
 }
-
-@media (prefers-color-scheme: light){
-  :root{
-    --bg: #ffffff;
-    --card: #f5f7fb;
-    --text: #12131a;
-    --muted: #495266;
-  }
-}
-
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1200px 600px at 80% -20%, var(--accent-2) 0%, transparent 55%),
-              radial-gradient(1000px 600px at -10% 20%, var(--accent) 0%, transparent 60%),
-              var(--bg);
-  color:var(--text);
+margin:0; font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+background: radial-gradient(1200px 600px at 15% -10%, rgba(255,62,165,.15), transparent),
+radial-gradient(1200px 600px at 85% 110%, rgba(110,231,255,.12), transparent),
+var(--bg);
+color:var(--ink);
 }
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+.container{max-width:840px; margin:0 auto; padding:28px 18px}
+.hidden{display:none}
 
-.container{
-  max-width:680px;
-  margin: 0 auto;
-  padding: 28px 20px 64px;
-}
 
-.profile{
-  text-align:center;
-  margin: 6px 0 18px;
-}
-.avatar{
-  width:96px;height:96px;border-radius:50%;display:block;margin: 12px auto 8px;
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 0 6px var(--ring);
-}
-h1{margin:6px 0 4px;font-size:28px;letter-spacing:0.2px}
-.tagline{margin:0;color:var(--muted)}
+/* Header / Profile */
+.profile{display:flex; flex-direction:column; align-items:center; gap:12px; padding:24px; margin-bottom:24px}
+.avatar{width:96px; height:96px; border-radius:50%; border:3px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
+.profile h1{margin:8px 0 0; font-size:1.9rem; letter-spacing:.2px}
+.tagline{margin:6px 0 0; color:var(--muted)}
 
-.links{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin: 22px 0 12px;
-}
+
+/* Link buttons */
+.links{display:grid; gap:12px; margin:22px 0}
 .link{
-  display:block;
-  text-decoration:none;
-  padding:14px 18px;
-  border-radius:14px;
-  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
-  border:1px solid rgba(255,255,255,0.08);
-  color:var(--text);
-  font-weight:600;
-  text-align:center;
-  transition: transform .06s ease, border-color .2s ease, box-shadow .2s ease;
+display:flex; align-items:center; justify-content:center; gap:10px;
+background:linear-gradient(180deg, rgba(255,62,165,.14), rgba(110,231,255,.10)), var(--card);
+padding:14px 16px; border-radius:var(--radius); box-shadow:var(--shadow);
+border:1px solid rgba(255,255,255,.06);
+transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.link:focus,.link:hover{ transform: translateY(-1px); border-color: var(--accent); box-shadow: 0 6px 24px -12px var(--ring);}
+.link:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,.18)}
 
-.socials{
-  display:flex; gap:10px; justify-content:center; margin: 10px 0 8px;
-}
-.icon{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:36px; height:36px; border-radius:9px; font-size:12px; font-weight:700;
-  text-decoration:none; color:var(--text);
-  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
-  border:1px solid rgba(255,255,255,0.08);
-}
-.icon:hover{ border-color: var(--accent)}
 
-.foot{
-  display:flex; align-items:center; justify-content:space-between;
-  margin-top:18px; color:var(--muted);
-}
-.copy{
-  border:0; padding:10px 14px; border-radius:10px; font-weight:600;
-  background: var(--accent); color:white; cursor:pointer;
-}
-.copy:hover{ filter: brightness(1.1) }
+/* Social icons row */
+.socials{display:flex; gap:10px; justify-content:center; margin:22px 0}
+.icon{font-weight:700; font-size:.9rem; padding:8px 12px; border-radius:999px; background:var(--card); border:1px solid rgba(255,255,255,.06)}
+.icon:hover{border-color:rgba(255,255,255,.18)}
+
+
+/* Footer */
+.foot{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:22px}
+.copy{cursor:pointer; border:0; background:var(--brand); color:#0b0410; font-weight:700; padding:10px 14px; border-radius:12px; box-shadow:var(--shadow)}
+.copy:focus{outline:none; box-shadow:0 0 0 6px rgba(var(--ring), .4)}
+small{color:var(--muted)}
+
+
+/* Section cards (About, Landing, Blog) */
+.section{background:var(--card); border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow); border-radius:var(--radius); padding:22px}
+.section h2{margin:0 0 10px}
+.muted{color:var(--muted)}
+
+
+/* Blog grid + cards */
+.grid{display:grid; gap:16px}
+@media(min-width:720px){ .grid{grid-template-columns:repeat(2,1fr)} }
+.post-card{
+display:flex; flex-direction:column; gap:10px; overflow:hidden;
+hr{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
