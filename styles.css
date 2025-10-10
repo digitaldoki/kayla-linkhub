@@ -84,3 +84,44 @@ small{color:var(--muted)}
 .post-card{
 display:flex; flex-direction:column; gap:10px; overflow:hidden;
 hr{border:0; border-top:1px solid rgba(255,255,255,.08); margin:18px 0}
+/* --- Glow + Card Fix (drop-in) --- */
+:root{
+  --brand: #ff3ea5; /* hot pink */
+}
+
+/* Ensure cards/buttons have a border to catch the glow */
+.link,
+.post-card {
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  transition: all 0.25s ease-in-out; /* smooth in/out */
+}
+
+/* Base card styling in case it's missing */
+.post-card{
+  background: var(--card, #151626);
+  box-shadow: 0 10px 25px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+
+/* Crisp inner neon edge that lingers on fade-out */
+.link:hover,
+.post-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--brand);
+  box-shadow:
+    inset 0 0 6px var(--brand),
+    inset 0 0 14px rgba(255, 62, 165, 0.8),
+    0 0 6px rgba(255, 62, 165, 0.5);
+  transition: all 0.40s ease-out; /* slower fade-out */
+}
+
+/* Blog grid if it isn't showing as cards */
+.grid{ display:grid; gap:16px; }
+@media(min-width:720px){ .grid{ grid-template-columns: repeat(2,1fr); } }
+
+.post-thumb{ aspect-ratio:16 / 9; object-fit:cover; width:100%; display:block; }
+.post-body{ padding:16px; }
+.post-title{ font-size:1.1rem; margin:0 0 4px; }
+.post-meta{ font-size:.85rem; color:#b9b9ce; margin-bottom:8px; }
+.post-excerpt{ color:#e9e9f6; }
